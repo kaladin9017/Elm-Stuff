@@ -1,0 +1,65 @@
+var _user$project$Main$Model = function (a) {
+	return {dieFace: a};
+};
+var _user$project$Main$init = {
+	ctor: '_Tuple2',
+	_0: _user$project$Main$Model(1),
+	_1: _elm_lang$core$Platform_Cmd$none
+};
+var _user$project$Main$NewFace = function (a) {
+	return {ctor: 'NewFace', _0: a};
+};
+var _user$project$Main$update = F2(
+	function (msg, model) {
+		var _p0 = msg;
+		if (_p0.ctor === 'Roll') {
+			return {
+				ctor: '_Tuple2',
+				_0: model,
+				_1: A2(
+					_elm_lang$core$Random$generate,
+					_user$project$Main$NewFace,
+					A2(_elm_lang$core$Random$int, 1, 6))
+			};
+		} else {
+			return {
+				ctor: '_Tuple2',
+				_0: _user$project$Main$Model(_p0._0),
+				_1: _elm_lang$core$Platform_Cmd$none
+			};
+		}
+	});
+var _user$project$Main$Roll = {ctor: 'Roll'};
+var _user$project$Main$view = function (model) {
+	return A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$h1,
+				{ctor: '[]'},
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html$text(
+						_elm_lang$core$Basics$toString(model.dieFace)),
+					_1: {ctor: '[]'}
+				}),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$button,
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$Roll),
+						_1: {ctor: '[]'}
+					},
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text('Roll'),
+						_1: {ctor: '[]'}
+					}),
+				_1: {ctor: '[]'}
+			}
+		});
+};

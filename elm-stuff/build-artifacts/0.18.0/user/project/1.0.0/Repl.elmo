@@ -1,0 +1,19 @@
+var _user$project$Repl$t_s_o_l = {ctor: '_Tuple0'};
+var _user$project$Repl$fib = function (n) {
+	fib:
+	while (true) {
+		if (_elm_lang$core$Native_Utils.cmp(n, 2) < 0) {
+			return 1;
+		} else {
+			var _v0 = (n - 1) + _user$project$Repl$fib(n - 2);
+			n = _v0;
+			continue fib;
+		}
+	}
+};
+var _user$project$Repl$d_e_l_t_r_o_n_3_0_3_0 = _user$project$Repl$fib(5);
+var _user$project$Repl$add = F2(
+	function (a, b) {
+		return a + b;
+	});
+var _user$project$Repl$add2 = _user$project$Repl$add(2);
