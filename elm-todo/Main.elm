@@ -6,7 +6,6 @@ main =
   Html.beginnerProgram { model = model, view = view, update = update }
 
 
-
 -- MODEL
 type alias Model =
   { todo : String
